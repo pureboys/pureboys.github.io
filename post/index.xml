@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ん?</title>
+    <link>https://pureboys.github.io/post/</link>
+    <description>Recent content in Posts on ん?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 24 Dec 2020 11:12:53 +0800</lastBuildDate><atom:link href="https://pureboys.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fail2ban 保护ss </title>
+      <link>https://pureboys.github.io/post/linux/fail2ban/</link>
+      <pubDate>Thu, 24 Dec 2020 11:12:53 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/linux/fail2ban/</guid>
+      <description>防止扫描、破解</description>
+    </item>
+    
+    <item>
+      <title>Linux普通用户使用Wireshark的权限不足的问题</title>
+      <link>https://pureboys.github.io/post/linux/use-wireshark/</link>
+      <pubDate>Sat, 07 Nov 2020 09:36:28 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/linux/use-wireshark/</guid>
+      <description>Linux普通用户使用Wireshark的权限不足的问题</description>
+    </item>
+    
+    <item>
+      <title>Golang 多个字段顺序排序</title>
+      <link>https://pureboys.github.io/post/golang/multi-sort/</link>
+      <pubDate>Wed, 28 Oct 2020 14:05:26 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/golang/multi-sort/</guid>
+      <description>Golang 多个字段顺序排序</description>
+    </item>
+    
+    <item>
+      <title>golang的定时器NewTimer、NewTicker使用</title>
+      <link>https://pureboys.github.io/post/golang/timer/</link>
+      <pubDate>Tue, 27 Oct 2020 14:15:02 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/golang/timer/</guid>
+      <description>golang的定时器NewTimer、NewTicker使用</description>
+    </item>
+    
+    <item>
+      <title>使用Docker-compose快速搭建Kafka开发环境</title>
+      <link>https://pureboys.github.io/post/docker-kafka/</link>
+      <pubDate>Tue, 20 Oct 2020 10:18:26 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/docker-kafka/</guid>
+      <description>使用Docker-compose快速搭建Kafka开发环境</description>
+    </item>
+    
+    <item>
+      <title>如何为Linux新增swap交换空间</title>
+      <link>https://pureboys.github.io/post/linux/swapfile/</link>
+      <pubDate>Sat, 10 Oct 2020 21:28:21 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/linux/swapfile/</guid>
+      <description>如何为Linux新增swap交换空间</description>
+    </item>
+    
+    <item>
+      <title>idea 干净卸载以及配置文件所在位置</title>
+      <link>https://pureboys.github.io/post/idea-uninstall/</link>
+      <pubDate>Sat, 12 Sep 2020 17:05:54 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/idea-uninstall/</guid>
+      <description>idea 干净卸载以及配置文件所在位置</description>
+    </item>
+    
+    <item>
+      <title>Openwrt 命令行配置上网并安装web界面</title>
+      <link>https://pureboys.github.io/post/linux/openwrt/</link>
+      <pubDate>Sun, 06 Sep 2020 19:12:53 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/linux/openwrt/</guid>
+      <description>Openwrt命令行配置上网并安装web界面</description>
+    </item>
+    
+    <item>
+      <title>更换Homebrew源</title>
+      <link>https://pureboys.github.io/post/homebrew/</link>
+      <pubDate>Fri, 10 Jul 2020 16:46:19 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/homebrew/</guid>
+      <description>更换Homebrew源</description>
+    </item>
+    
+    <item>
+      <title>Git 子模块 Submodule 教程</title>
+      <link>https://pureboys.github.io/post/submodule/</link>
+      <pubDate>Fri, 26 Jun 2020 14:52:28 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/submodule/</guid>
+      <description>Git 子模块 Submodule 教程</description>
+    </item>
+    
+    <item>
+      <title>Clash 相关操作</title>
+      <link>https://pureboys.github.io/post/clash/</link>
+      <pubDate>Fri, 26 Jun 2020 14:19:29 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/clash/</guid>
+      <description>Clash 相关操作</description>
+    </item>
+    
+    <item>
+      <title>一步登陆 jumpserver 跳板机 告别Google的身份验证器</title>
+      <link>https://pureboys.github.io/post/jump-server/</link>
+      <pubDate>Mon, 22 Jun 2020 09:37:33 +0800</pubDate>
+      
+      <guid>https://pureboys.github.io/post/jump-server/</guid>
+      <description>一步登陆 jumpserver 跳板机 告别Google的身份验证器</description>
+    </item>
+    
+  </channel>
+</rss>
