@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>git - Category - ん?</title>
+        <link>https://pureboys.github.io/categories/git/</link>
+        <description>git - Category - ん?</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 26 Jun 2020 14:52:28 &#43;0800</lastBuildDate><atom:link href="https://pureboys.github.io/categories/git/" rel="self" type="application/rss+xml" /><item>
+    <title>Git 子模块 Submodule 教程</title>
+    <link>https://pureboys.github.io/submodule/</link>
+    <pubDate>Fri, 26 Jun 2020 14:52:28 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/submodule/</guid>
+    <description><![CDATA[Git 子模块 Submodule 教程]]></description>
+</item>
+</channel>
+</rss>

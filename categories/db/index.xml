@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>db - Category - ん?</title>
+        <link>https://pureboys.github.io/categories/db/</link>
+        <description>db - Category - ん?</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 09 Jan 2023 13:00:29 &#43;0800</lastBuildDate><atom:link href="https://pureboys.github.io/categories/db/" rel="self" type="application/rss+xml" /><item>
+    <title>ClickHouse时间查询</title>
+    <link>https://pureboys.github.io/clickhouse-search-time/</link>
+    <pubDate>Mon, 09 Jan 2023 13:00:29 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/clickhouse-search-time/</guid>
+    <description><![CDATA[ClickHouse时间查询]]></description>
+</item>
+</channel>
+</rss>

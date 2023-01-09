@@ -1,0 +1,89 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ん?</title>
+        <link>https://pureboys.github.io/</link>
+        <description>这是我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 09 Jan 2023 13:00:29 &#43;0800</lastBuildDate>
+            <atom:link href="https://pureboys.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>ClickHouse时间查询</title>
+    <link>https://pureboys.github.io/clickhouse-search-time/</link>
+    <pubDate>Mon, 09 Jan 2023 13:00:29 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/clickhouse-search-time/</guid>
+    <description><![CDATA[ClickHouse时间查询]]></description>
+</item>
+<item>
+    <title>docker 配置文件</title>
+    <link>https://pureboys.github.io/docker-compose-config/</link>
+    <pubDate>Wed, 11 Aug 2021 10:18:26 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/docker-compose-config/</guid>
+    <description><![CDATA[docker 配置文件]]></description>
+</item>
+<item>
+    <title>pipeline中Jenkinsfile实例</title>
+    <link>https://pureboys.github.io/jenkins/</link>
+    <pubDate>Thu, 15 Apr 2021 13:00:29 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/jenkins/</guid>
+    <description><![CDATA[pipeline中Jenkinsfile实例]]></description>
+</item>
+<item>
+    <title>fail2ban 保护ss </title>
+    <link>https://pureboys.github.io/fail2ban/</link>
+    <pubDate>Thu, 24 Dec 2020 11:12:53 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/fail2ban/</guid>
+    <description><![CDATA[防止扫描、破解]]></description>
+</item>
+<item>
+    <title>Linux普通用户使用Wireshark的权限不足的问题</title>
+    <link>https://pureboys.github.io/use-wireshark/</link>
+    <pubDate>Sat, 07 Nov 2020 09:36:28 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/use-wireshark/</guid>
+    <description><![CDATA[Linux普通用户使用Wireshark的权限不足的问题]]></description>
+</item>
+<item>
+    <title>Golang 多个字段顺序排序</title>
+    <link>https://pureboys.github.io/multi-sort/</link>
+    <pubDate>Wed, 28 Oct 2020 14:05:26 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/multi-sort/</guid>
+    <description><![CDATA[Golang 多个字段顺序排序]]></description>
+</item>
+<item>
+    <title>golang的定时器NewTimer、NewTicker使用</title>
+    <link>https://pureboys.github.io/timer/</link>
+    <pubDate>Tue, 27 Oct 2020 14:15:02 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/timer/</guid>
+    <description><![CDATA[golang的定时器NewTimer、NewTicker使用]]></description>
+</item>
+<item>
+    <title>使用Docker-compose快速搭建Kafka开发环境</title>
+    <link>https://pureboys.github.io/docker-kafka/</link>
+    <pubDate>Tue, 20 Oct 2020 10:18:26 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/docker-kafka/</guid>
+    <description><![CDATA[使用Docker-compose快速搭建Kafka开发环境]]></description>
+</item>
+<item>
+    <title>如何为Linux新增swap交换空间</title>
+    <link>https://pureboys.github.io/swapfile/</link>
+    <pubDate>Sat, 10 Oct 2020 21:28:21 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/swapfile/</guid>
+    <description><![CDATA[如何为Linux新增swap交换空间]]></description>
+</item>
+<item>
+    <title>idea 干净卸载以及配置文件所在位置</title>
+    <link>https://pureboys.github.io/idea-uninstall/</link>
+    <pubDate>Sat, 12 Sep 2020 17:05:54 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/idea-uninstall/</guid>
+    <description><![CDATA[idea 干净卸载以及配置文件所在位置]]></description>
+</item>
+</channel>
+</rss>

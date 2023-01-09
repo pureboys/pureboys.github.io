@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>golang - Category - ん?</title>
+        <link>https://pureboys.github.io/categories/golang/</link>
+        <description>golang - Category - ん?</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 28 Oct 2020 14:05:26 &#43;0800</lastBuildDate><atom:link href="https://pureboys.github.io/categories/golang/" rel="self" type="application/rss+xml" /><item>
+    <title>Golang 多个字段顺序排序</title>
+    <link>https://pureboys.github.io/multi-sort/</link>
+    <pubDate>Wed, 28 Oct 2020 14:05:26 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/multi-sort/</guid>
+    <description><![CDATA[Golang 多个字段顺序排序]]></description>
+</item>
+<item>
+    <title>golang的定时器NewTimer、NewTicker使用</title>
+    <link>https://pureboys.github.io/timer/</link>
+    <pubDate>Tue, 27 Oct 2020 14:15:02 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/timer/</guid>
+    <description><![CDATA[golang的定时器NewTimer、NewTicker使用]]></description>
+</item>
+</channel>
+</rss>

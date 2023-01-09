@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>docker - Category - ん?</title>
+        <link>https://pureboys.github.io/categories/docker/</link>
+        <description>docker - Category - ん?</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 11 Aug 2021 10:18:26 &#43;0800</lastBuildDate><atom:link href="https://pureboys.github.io/categories/docker/" rel="self" type="application/rss+xml" /><item>
+    <title>docker 配置文件</title>
+    <link>https://pureboys.github.io/docker-compose-config/</link>
+    <pubDate>Wed, 11 Aug 2021 10:18:26 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/docker-compose-config/</guid>
+    <description><![CDATA[docker 配置文件]]></description>
+</item>
+<item>
+    <title>使用Docker-compose快速搭建Kafka开发环境</title>
+    <link>https://pureboys.github.io/docker-kafka/</link>
+    <pubDate>Tue, 20 Oct 2020 10:18:26 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/docker-kafka/</guid>
+    <description><![CDATA[使用Docker-compose快速搭建Kafka开发环境]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>cicd - Category - ん?</title>
+        <link>https://pureboys.github.io/categories/cicd/</link>
+        <description>cicd - Category - ん?</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 15 Apr 2021 13:00:29 &#43;0800</lastBuildDate><atom:link href="https://pureboys.github.io/categories/cicd/" rel="self" type="application/rss+xml" /><item>
+    <title>pipeline中Jenkinsfile实例</title>
+    <link>https://pureboys.github.io/jenkins/</link>
+    <pubDate>Thu, 15 Apr 2021 13:00:29 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/jenkins/</guid>
+    <description><![CDATA[pipeline中Jenkinsfile实例]]></description>
+</item>
+</channel>
+</rss>

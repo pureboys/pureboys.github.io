@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>如何为Linux新增swap交换空间 - ん?</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="如何为Linux新增swap交换空间" />
+<meta property="og:description" content="如何为Linux新增swap交换空间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pureboys.github.io/swapfile/" />
+<meta property="og:image" content="https://pureboys.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-10-10T21:28:21+08:00" />
+<meta property="article:modified_time" content="2023-01-09T14:32:59+08:00" /><meta property="og:site_name" content="我的网站" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://pureboys.github.io/logo.png"/>
+
+<meta name="twitter:title" content="如何为Linux新增swap交换空间"/>
+<meta name="twitter:description" content="如何为Linux新增swap交换空间"/>
+<meta name="application-name" content="我的网站">
+<meta name="apple-mobile-web-app-title" content="我的网站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pureboys.github.io/swapfile/" /><link rel="prev" href="https://pureboys.github.io/idea-uninstall/" /><link rel="next" href="https://pureboys.github.io/docker-kafka/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "如何为Linux新增swap交换空间",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pureboys.github.io\/swapfile\/"
+        },"genre": "posts","wordcount":  1455 ,
+        "url": "https:\/\/pureboys.github.io\/swapfile\/","datePublished": "2020-10-10T21:28:21+08:00","dateModified": "2023-01-09T14:32:59+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "oliver"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="ん?">ん?</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="ん?">ん?</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">如何为Linux新增swap交换空间</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>oliver</a>
+</span>&nbsp;<span class="post-category">included in <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-10">2020-10-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1455 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#步骤">步骤</a></li>
+    <li><a href="#去掉swap">去掉swap</a></li>
+    <li><a href="#refer">Refer</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="概述">概述</h2>
+<p>在Linux上增加swap空间的方法有两种：</p>
+<ol>
+<li>在安装时手动分配swap，对于这种方式，空间大小是事先规划好的，每次系统启动时会自动进行挂载，但这种方法只能在安装OS时设定，一旦设定好不容易改变，除非重装系统。</li>
+<li>使用<code>swapfile</code>: 新建临时<code>swapfile</code>或者是空闲分区，在需要的时候设定为交换空间，最多可以增加8个<code>swapfile</code>。</li>
+</ol>
+<p><code>Redhat6.4官方</code>推荐的系统交换空间:</p>
+<table>
+<thead>
+<tr>
+<th>系统中的RAM大小</th>
+<th>建议交换空间</th>
+<th>如果允许休眠建议使用交换空间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⩽<code>2GB</code></td>
+<td>RAM的2倍</td>
+<td>RAM数量的3倍</td>
+</tr>
+<tr>
+<td>&gt; <code>2GB - 8GB</code></td>
+<td>等于RAM的数量</td>
+<td>RAM的2倍</td>
+</tr>
+<tr>
+<td>&gt; <code>8GB - 64GB</code></td>
+<td>至少4 GB</td>
+<td>RAM的1.5倍</td>
+</tr>
+<tr>
+<td>&gt; <code>64GB</code></td>
+<td>至少4 GB</td>
+<td>不建议休眠</td>
+</tr>
+</tbody>
+</table>
+<p>因为有些系统会允许休眠状态，如果不设置swap会无法启动，就像windows系统使用休眠设置虚拟内存一样。使用这种方法比较灵活，也比较方便，缺点是启动系统后需要手工设置。</p>
+<p>还有其他一些博客中有下面一个推荐设置，我也不清楚是怎么得到这个标准的，是否合理也无从考证，可以作为一个参考：</p>
+<table>
+<thead>
+<tr>
+<th>系统中的RAM大小</th>
+<th>建议交换空间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⩽ <code>4G</code></td>
+<td>SWAP 设置为内存的2倍</td>
+</tr>
+<tr>
+<td><code>4G-8G</code></td>
+<td>SWAP 等于内存大小</td>
+</tr>
+<tr>
+<td><code>8G-64G</code></td>
+<td>SWAP 设置为<code>8G</code></td>
+</tr>
+<tr>
+<td><code>64G-256G</code></td>
+<td>SWAP 设置为<code>16G</code></td>
+</tr>
+</tbody>
+</table>
+<p>如何选择可以考虑以下几个情况：</p>
+<ul>
+<li>物理内存空间是否在峰值也可以满足要求，不满足建议设置swap防止内存溢出导致主机宕机，当然设置不宜过大，占用磁盘空间。</li>
+<li>磁盘I/O是否足够，使用磁盘I/O值过低或者其他业务要求高，不建议设置swap。由于使用swap需要频繁写入磁盘，使用固态硬盘不建议设置（固态硬盘PE写入次数有限，因此寿命要比机械硬盘更低，考虑到使用寿命当然就尽量减少写入次数）</li>
+<li>服务器安装的具体的应用，比如<code>Mysql</code>等不推荐设置，可以不设置或者修改参数<code>swappiness</code>来控制的，默认值为 60意思是说在内存使用40%的情况下就使用swap空间，可以将值设置为10 或者设置0，优先使用物理内存。</li>
+</ul>
+<p>对于我使用<code>manjaor linux</code>作为日常操作系统用的就没有上述的考虑了，根据自己的使用情况，<code>8G</code>内存我设置<code>8G</code>或者<code>2G</code>其实都够用</p>
+<p>分配<code>swapfile</code>作为交换空间步骤如下：</p>
+<h2 id="步骤">步骤</h2>
+<ol>
+<li>首先运行</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">free -h
+</code></pre></td></tr></table>
+</div>
+</div><p>查看一下物理内存大小和swap</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">             总计         已用        空闲       共享    	   缓冲/缓存    可用
+内存：       7.7Gi       2.3Gi       2.3Gi       612Mi       3.1Gi       4.5Gi
+交换：       0Gi          	0B       	0Gi
+</code></pre></td></tr></table>
+</div>
+</div><p>我的显示<code>8G</code>并没有分配<code>swap</code>空间所以为0</p>
+<ol>
+<li>创建<code>swapfile</code>文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 切换到根路径</span>
+$ <span class="nb">cd</span> /
+<span class="c1"># 这里只需要改count的大小即可比如分配8G就是8，bs是单位</span>
+<span class="c1"># swapfile的位置是/var/swapfile也可以自己修改，名称也可以不叫swapfile,自己指定</span>
+$ sudo dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/var/swapfile <span class="nv">bs</span><span class="o">=</span>1G <span class="nv">count</span><span class="o">=</span><span class="m">8</span>
+8+0 的读入
+8+0 的写出
+<span class="m">8589934592</span> bytes <span class="o">(</span>8.1 GB<span class="o">)</span> copied, 40.55445 s, <span class="m">202</span> MB/s
+</code></pre></td></tr></table>
+</div>
+</div><p><code>mkswap</code>创建交换文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo mkswap /var/swapfile
+</code></pre></td></tr></table>
+</div>
+</div><p><code>swapon</code>激活</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> $ swapon /var/swapfile
+</code></pre></td></tr></table>
+</div>
+</div><p>查看增加后swap空间</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ free -h
+			总计         已用        空闲      共享    		缓冲/缓存    可用
+内存：       7.7Gi       2.3Gi       2.3Gi    612Mi       3.1Gi       4.5Gi
+交换：       8Gi          	0B       	8Gi
+</code></pre></td></tr></table>
+</div>
+</div><p>设置开机自动挂载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo vim /etc/fstab
+</code></pre></td></tr></table>
+</div>
+</div><p>在其中添加一行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">/var/swapfile			swap			swap	defaults <span class="m">0</span> <span class="m">0</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>添加之后我的完整fstab文件如下，自行参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># /etc/fstab: static file system information.</span>
+<span class="c1">#</span>
+<span class="c1"># Use &#39;blkid&#39; to print the universally unique identifier for a device; this may</span>
+<span class="c1"># be used with UUID= as a more robust way to name devices that works even if</span>
+<span class="c1"># disks are added and removed. See fstab(5).</span>
+<span class="c1">#</span>
+<span class="c1"># &lt;file system&gt;             &lt;mount point&gt;  &lt;type&gt;  &lt;options&gt;  &lt;dump&gt;  &lt;pass&gt;</span>
+/var/swapfile			swap			swap	defaults <span class="m">0</span> <span class="m">0</span>
+/dev/sdb3			/home/guqing/guqing	ext4	defaults <span class="m">0</span> <span class="m">0</span>
+<span class="nv">UUID</span><span class="o">=</span>A402-DC5E                            /boot/efi      vfat    <span class="nv">umask</span><span class="o">=</span><span class="m">0077</span> <span class="m">0</span> <span class="m">2</span>
+<span class="nv">UUID</span><span class="o">=</span>21d03dc0-948a-4adc-969c-3160a29aeef2 /              ext4    defaults,noatime <span class="m">0</span> <span class="m">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其中<code>/dev/sdb3</code>一行是因为我挂载了磁盘的缘故</p>
+<p>然后执行,自动挂载所有在<code>fstab</code>中的文件系统</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> $ mount -a
+</code></pre></td></tr></table>
+</div>
+</div><p>到此就可以使用<code>swapfile</code>了</p>
+<h2 id="去掉swap">去掉swap</h2>
+<p>如果不想使用swap空间了，可以使用如下方法删除<code>swapfile</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 停用</span>
+$ sudo swapoff /var/swapfile
+
+<span class="c1"># 删除swapfile,路径为创建时制定的，/var/swapfile</span>
+$ sudo rm -f /var/swapfile
+
+<span class="c1"># 确认</span>
+$ free -h
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="refer">Refer</h2>
+<p><a href="https://guqing.xyz/archives/linux-swapfile">https://guqing.xyz/archives/linux-swapfile</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/idea-uninstall/" class="prev" rel="prev" title="idea 干净卸载以及配置文件所在位置"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>idea 干净卸载以及配置文件所在位置</a>
+            <a href="/docker-kafka/" class="next" rel="next" title="使用Docker-compose快速搭建Kafka开发环境">使用Docker-compose快速搭建Kafka开发环境<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">oliver</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":150},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

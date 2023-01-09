@@ -1,0 +1,47 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>software - Category - ん?</title>
+        <link>https://pureboys.github.io/categories/software/</link>
+        <description>software - Category - ん?</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 07 Nov 2020 09:36:28 &#43;0800</lastBuildDate><atom:link href="https://pureboys.github.io/categories/software/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux普通用户使用Wireshark的权限不足的问题</title>
+    <link>https://pureboys.github.io/use-wireshark/</link>
+    <pubDate>Sat, 07 Nov 2020 09:36:28 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/use-wireshark/</guid>
+    <description><![CDATA[Linux普通用户使用Wireshark的权限不足的问题]]></description>
+</item>
+<item>
+    <title>idea 干净卸载以及配置文件所在位置</title>
+    <link>https://pureboys.github.io/idea-uninstall/</link>
+    <pubDate>Sat, 12 Sep 2020 17:05:54 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/idea-uninstall/</guid>
+    <description><![CDATA[idea 干净卸载以及配置文件所在位置]]></description>
+</item>
+<item>
+    <title>更换Homebrew源</title>
+    <link>https://pureboys.github.io/homebrew/</link>
+    <pubDate>Fri, 10 Jul 2020 16:46:19 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/homebrew/</guid>
+    <description><![CDATA[更换Homebrew源]]></description>
+</item>
+<item>
+    <title>Clash 相关操作</title>
+    <link>https://pureboys.github.io/clash/</link>
+    <pubDate>Fri, 26 Jun 2020 14:19:29 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/clash/</guid>
+    <description><![CDATA[Clash 相关操作]]></description>
+</item>
+<item>
+    <title>一步登陆 jumpserver 跳板机 告别Google的身份验证器</title>
+    <link>https://pureboys.github.io/jump-server/</link>
+    <pubDate>Mon, 22 Jun 2020 09:37:33 &#43;0800</pubDate>
+    <author>oliver</author>
+    <guid>https://pureboys.github.io/jump-server/</guid>
+    <description><![CDATA[一步登陆 jumpserver 跳板机 告别Google的身份验证器]]></description>
+</item>
+</channel>
+</rss>
